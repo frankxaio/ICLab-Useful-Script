@@ -1,6 +1,7 @@
 # Some interesting script for ICLAB
 **[可以參考HACKMD上比較漂亮的說明](https://hackmd.io/@JyunWei-Su/ICLAB-script)**
-**[安裝方法](ht**tps://github.com/JyunWei-Su/ICLab-Useful-Srcipt?tab=readme-ov-file#%E8%85%B3%E6%9C%AC%E5%85%A7%E5%AE%B9%E8%88%87%E8%A8%AD%E5%AE%9A%E6%96%B9%E5%BC%8F
+**[安裝方法](ht**tps://github.com/JyunWei-Su/ICLab-Useful-Srcipt?tab=readme-ov-file#%E8%85%B3%E6%9C%AC%E5%85%A7%E5%AE%B9%E8%88%87%E8%A8%AD%E5%AE%9A%E6%96%B9%E5%BC%8F)
+
 ## 功能介紹
 1. **登入時顯示目前 quota 百分比**
     ![](https://hackmd.io/_uploads/BJEdAREzT.png)

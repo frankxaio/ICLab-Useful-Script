@@ -123,18 +123,7 @@ alias clean0123 ' \
 # Note: rpt is complex to implement as a one-line alias in tcsh.
 # Implementing as a shell script block executed via eval or simple sourcing logic is cleaner.
 # Here we map it to a subshell script for display.
-alias rpt 'tcsh -c " \
-    set dir = $ROOT_PATH/02_SYN/Report; \
-    if ( ! -d \$dir ) then; \
-        echo Report directory not found: \$dir; \
-        exit 1; \
-    endif; \
-    if ( \!* == \"\" ) then; \
-        echo Available extensions under \$dir:; \
-        ls \$dir | sed -E s/.*\.// | sort -u; \
-    else; \
-        cat \$dir/*.\!*; \
-    endif"'
+alias rpt 'tcsh "$SCRIPT_PATH/rpt.csh" \!*'
 
 alias c 'setenv TESTBED_FILE "$TESTBED_FILE"; setenv PATTERN_FILE "$PATTERN_FILE"; setenv SYN_FILE "$SYN_FILE"; tcsh "$SCRIPT_PATH/cycle.csh" \!*'
 
@@ -144,6 +133,8 @@ alias f 'setenv TESTBED_FILE "$TESTBED_FILE"; tcsh "$SCRIPT_PATH/fsdb.csh" \!*'
 alias check_warn 'tcsh "$SCRIPT_PATH/check_warn.csh"'
 
 alias quota 'tcsh "$SCRIPT_PATH/quota.csh"'
+
+alias update_project_env 'bash $HOME/install.sh'
 
 alias prj_help ' \
     echo "${GREEN}+---------------+----------------------------------------------------------------+${NC}"; \

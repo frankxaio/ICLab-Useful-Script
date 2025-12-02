@@ -69,13 +69,22 @@ $ prj
 
 
 
-### 快速模擬 RTL, GATE, POST
+### 快速模擬 RTL, SYN, GATE, POST
 
 -   輸入 `rtl` 執行 rtl simulation 
+-   輸入 `syn` 執行 synthesis 
 -   輸入 `gate` 執行 gate-level simulation
 -   輸入 `post` 執行 post simulation 
 
 ![image-20251203012543088](https://raw.githubusercontent.com/frankxaio/markdwon-image/main/data/image-20251203012543088.png)
 
+### 快速檢查合成結果
 
 
+
+### 快速檢查 vcs.log syn.log
+
+-   在 01_RTL 輸入 check_warn 檢查 vcs.log
+-   在 02_SYN 輸入 check_warn 檢查 syn.log
+
+![image-20251203014157897](https://raw.githubusercontent.com/frankxaio/markdwon-image/main/data/image-20251203014157897.png)

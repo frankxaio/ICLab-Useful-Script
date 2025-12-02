@@ -26,3 +26,5 @@ else
         echo "No files found with extension .$ext in $dir"
     endif
 endif
+
+exit 0

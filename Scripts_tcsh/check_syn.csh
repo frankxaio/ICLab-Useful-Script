@@ -24,7 +24,7 @@ set Leakage = `grep "Cell Leakage Power" "Report/${Design}.power"`
 set memory_area = `grep 'Macro/Black Box area' "Report/${Design}.area" | tr -dc '0-9'`
 if ( "$memory_area" == "" ) set memory_area = "0"
 
-# Calculate Gate Count (Ensure backticks are used)
+# Calculate Gate Count
 set gate_count = `echo "$Area / 9.9792" | bc -l`
 
 set flag = 0
@@ -36,25 +36,25 @@ if ( $status == 0 ) then
     echo "${RED}--> X There is Latch in this design ---${NC}"
     @ flag = 1
 else
-    echo "${GREEN}--> V Latch Checked!${NC}"
+    echo "${GREEN}--> V Latch Checked\!${NC}"
 endif
 
 # Check Width Mismatch
 grep -i -q 'mismatch' 'syn.log'
 if ( $status == 0 ) then
-    echo "${RED}--> X Width Mismatch Error !! ---${NC}"
+    echo "${RED}--> X Width Mismatch Error \!\! ---${NC}"
     @ flag = 1
 else
-    echo "${GREEN}--> V Width Mismatch Checked!${NC}"
+    echo "${GREEN}--> V Width Mismatch Checked\!${NC}"
 endif
 
 # Check Error
 grep -i -q 'Error' 'syn.log'
 if ( $status == 0 ) then
-    echo "${RED}--> X There is Error in this design !! ---${NC}"
+    echo "${RED}--> X There is Error in this design \!\! ---${NC}"
     @ flag = 1
 else
-    echo "${GREEN}--> V No Error in syn.log!${NC}"
+    echo "${GREEN}--> V No Error in syn.log\!${NC}"
 endif
 
 # Check Timing
@@ -63,15 +63,15 @@ if ( $status == 0 ) then
     echo "${RED}--> X Timing (violated) ---${NC}"
     @ flag = 1
 else
-    echo "${GREEN}--> V Timing (MET) Checked!${NC}"
+    echo "${GREEN}--> V Timing (MET) Checked\!${NC}"
 endif
 
 echo "${YELLOW}============================${NC}"
 
 if ( $flag == 1 ) then
-    echo "${RED}--> X 02_SYN Fail !! Please check out syn.log file.${NC}"
+    echo "${RED}--> X 02_SYN Fail \!\! Please check out syn.log file.${NC}"
 else
-    echo "${GREEN}--> V 02_SYN Success !!${NC}"
+    echo "${GREEN}--> V 02_SYN Success \!\!${NC}"
 endif
 
 echo "${YELLOW}============================${NC}"

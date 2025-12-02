@@ -1,10 +1,12 @@
 #!/usr/bin/tcsh -f
 
 set Design = "$1"
-set NC = '\033[0m'
-set RED = '\033[0;31m'
-set GREEN = '\033[0;32m'
-set YELLOW = '\033[1;33m'
+
+# Fix: Use printf with backticks to generate real escape codes
+set NC     = `printf '\033[0m'`
+set RED    = `printf '\033[0;31m'`
+set GREEN  = `printf '\033[0;32m'`
+set YELLOW = `printf '\033[1;33m'`
 
 # Check if report files exist
 if ( ! -f "Report/${Design}.timing" || ! -f "Report/${Design}.area" ) then
@@ -12,13 +14,17 @@ if ( ! -f "Report/${Design}.timing" || ! -f "Report/${Design}.area" ) then
     exit 1
 endif
 
+# Extract data
 set Cycle = `grep "clock clk (rise edge)" "Report/${Design}.timing" | grep -Eo '[+-]?[0-9]+([.][0-9]+)?' | sed -n '4p'`
 set Area = `grep 'Total cell area:' "Report/${Design}.area" | grep -Eo '[+-]?[0-9]+([.][0-9]+)?'`
 set Dynamic = `grep "Total Dynamic Power" "Report/${Design}.power"`
 set Leakage = `grep "Cell Leakage Power" "Report/${Design}.power"`
+
+# Handle Memory Area
 set memory_area = `grep 'Macro/Black Box area' "Report/${Design}.area" | tr -dc '0-9'`
 if ( "$memory_area" == "" ) set memory_area = "0"
 
+# Calculate Gate Count (Ensure backticks are used)
 set gate_count = `echo "$Area / 9.9792" | bc -l`
 
 set flag = 0
@@ -61,6 +67,7 @@ else
 endif
 
 echo "${YELLOW}============================${NC}"
+
 if ( $flag == 1 ) then
     echo "${RED}--> X 02_SYN Fail !! Please check out syn.log file.${NC}"
 else

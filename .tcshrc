@@ -55,7 +55,6 @@ set P_NC     = "%{\033[0m%}"
 if ( $uid == 0 ) then
     set prompt = "${P_RED}[%n@%m]${P_NC} ${P_CYAN}%~ ${P_RED}>${P_NC} "
 else
-    # 一般使用者
     set prompt = "${P_GREEN}[%n@%m]${P_NC} ${P_YELLOW}%~ ${P_NC}> "
 endif
 

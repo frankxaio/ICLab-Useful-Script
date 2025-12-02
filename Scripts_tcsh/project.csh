@@ -50,7 +50,6 @@ echo "${BLUE}| check_syn      | ${NC}summarize synthesis results"
 echo "${BLUE}| rpt            | ${NC}cat all files in \$ROOT_PATH/02_SYN/Report/*.ext"
 echo "${BLUE}| clean          | ${NC}clean current directory"
 echo "${BLUE}| clean0123      | ${NC}clean 00_TESTBED, 01_RTL, 02_SYN, 03_GATE"
-echo "${BLUE}| link_mk        | ${NC}link makefile to current directory"
 echo "${GREEN}+---------------+----------------------------------------------------------------+${NC}"
 
 # -------------------- Script Source ------------------
@@ -78,11 +77,13 @@ alias 2r "cd '$ROOT_PATH/02_SYN/Report/'"
 alias 2n "cd '$ROOT_PATH/02_SYN/Netlist/'"
 
 # -- Python Tools
-alias python "~/miniconda3/bin/python3"
+# alias python "~/miniconda3/bin/python3"
 
 # -- Document
-alias doc_dw "cd /usr/Synopsys/syn/T-2022.03-SP2/dw/doc/manuals/"
-alias doc_verdi "cd /usr/Synopsys/verdi/T-2022.06/doc/"
+alias doc_dw "evince /usr/cad/synopsys/synthesis/cur/dw/doc/manuals/dwbb_userguide.pdf >& /dev/null &"
+alias doc_io "evince ~iclabTA01/umc018/Doc/umc18io3v5v.pdf >& /dev/null &"
+alias doc_verdi "evince /RAID2/cad/synopsys/verdi/2022.06/doc/VerdiTut.pdf >& /dev/null &"
+alias doc_soc "cd /RAID2/cad/cadence/INNOVUS/INNOVUS_20.15.000/doc"
 
 # =====================================================
 # Functional Aliases
@@ -90,13 +91,13 @@ alias doc_verdi "cd /usr/Synopsys/verdi/T-2022.06/doc/"
 
 alias check_syn 'source "$SCRIPT_PATH/cd.csh" 2; tcsh "$SCRIPT_PATH/check_syn.csh" "$DESIGN_MAKE"'
 
-alias rtl 'source "$SCRIPT_PATH/cd.csh" 1; make vcs_rtl |& grc -c ~/.grc/vcs.conf cat'
+alias rtl 'source "$SCRIPT_PATH/cd.csh" 1; make vcs_rtl'
 
-alias syn 'source "$SCRIPT_PATH/cd.csh" 2; make syn |& grc -c ~/.grc/dcshell.conf cat'
+alias syn 'source "$SCRIPT_PATH/cd.csh" 2; make syn'
 
-alias gate 'source "$SCRIPT_PATH/cd.csh" 3; make vcs_gate |& grc -c ~/.grc/vcs.conf cat'
+alias gate 'source "$SCRIPT_PATH/cd.csh" 3; make vcs_gate'
 
-alias post 'source "$SCRIPT_PATH/cd.csh" 6; make vcs_post |& grc -c ~/.grc/vcs.conf cat'
+alias post 'source "$SCRIPT_PATH/cd.csh" 6; make vcs_post'
 
 alias clean 'echo "${BLUE}[INFO] Cleaning current directory...${NC}"; make -f "$ROOT_PATH/00_TESTBED/makefile" clean >& /dev/null'
 

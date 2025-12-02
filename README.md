@@ -80,14 +80,23 @@ $ prj
 
 ### 快速檢查合成結果
 
--   輸入 check_syn 檢查合成結果
--   輸入 rpt timing, rpt power,.. 查看各種合成報告
+-   輸入 `check_syn` 檢查合成結果
+-   輸入 `rpt` 查看有哪些 report
+-   輸入 `rpt timing`, `rpt power`,.. 查看各種 report
+
+
+
+![image-20251203015352699](https://raw.githubusercontent.com/frankxaio/markdwon-image/main/data/image-20251203015352699.png)
+
+![image-20251203015450957](https://raw.githubusercontent.com/frankxaio/markdwon-image/main/data/image-20251203015450957.png)
+
+![image-20251203015558913](https://raw.githubusercontent.com/frankxaio/markdwon-image/main/data/image-20251203015558913.png)
 
 
 
 ### 快速檢查 vcs.log syn.log
 
--   在 01_RTL 輸入 check_warn 檢查 vcs.log
--   在 02_SYN 輸入 check_warn 檢查 syn.log
+-   在 01_RTL 輸入 `check_warn` 檢查 vcs.log
+-   在 02_SYN 輸入 `check_warn` 檢查 syn.log
 
 ![image-20251203014157897](https://raw.githubusercontent.com/frankxaio/markdwon-image/main/data/image-20251203014157897.png)

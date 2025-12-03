@@ -4,7 +4,7 @@ set -e  # Exit immediately if a command exits with a non-zero status
 # ==============================================================================
 # Configuration
 # ==============================================================================
-REPO_URL="https://github.com/frankxaio/ICLab-Useful-Srcipt.git"
+REPO_URL="https://github.com/frankxaio/ICLab-Useful-Script.git"
 INSTALL_DIR="$HOME/.asic-script"
 TEMP_DIR="$HOME/temp_git_install_$(date +%s)"
 

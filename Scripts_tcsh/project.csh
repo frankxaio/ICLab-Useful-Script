@@ -89,7 +89,7 @@ alias doc_soc "cd /RAID2/cad/cadence/INNOVUS/INNOVUS_20.15.000/doc"
 # Functional Aliases
 # =====================================================
 
-alias check_syn 'source "$SCRIPT_PATH/cd.csh" 2; tcsh "$SCRIPT_PATH/check_syn.csh" "$DESIGN_MAKE"'
+alias check_syn 'source "$SCRIPT_PATH/cd.csh" 2; source "$SCRIPT_PATH/check_syn.csh" "$DESIGN_MAKE"'
 
 alias rtl 'source "$SCRIPT_PATH/cd.csh" 1; make vcs_rtl'
 
@@ -123,16 +123,16 @@ alias clean0123 ' \
 # Note: rpt is complex to implement as a one-line alias in tcsh.
 # Implementing as a shell script block executed via eval or simple sourcing logic is cleaner.
 # Here we map it to a subshell script for display.
-alias rpt 'tcsh "$SCRIPT_PATH/rpt.csh" \!*'
+alias rpt 'source "$SCRIPT_PATH/rpt.csh" \!*'
 
-alias c 'setenv TESTBED_FILE "$TESTBED_FILE"; setenv PATTERN_FILE "$PATTERN_FILE"; setenv SYN_FILE "$SYN_FILE"; tcsh "$SCRIPT_PATH/cycle.csh" \!*'
+alias c 'setenv TESTBED_FILE "$TESTBED_FILE"; setenv PATTERN_FILE "$PATTERN_FILE"; setenv SYN_FILE "$SYN_FILE"; source "$SCRIPT_PATH/cycle.csh" \!*'
 
-alias f 'setenv TESTBED_FILE "$TESTBED_FILE"; tcsh "$SCRIPT_PATH/fsdb.csh" \!*'
+alias f 'setenv TESTBED_FILE "$TESTBED_FILE"; source "$SCRIPT_PATH/fsdb.csh" \!*'
 
 
-alias check_warn 'tcsh "$SCRIPT_PATH/check_warn.csh"'
+alias check_warn 'source "$SCRIPT_PATH/check_warn.csh"'
 
-alias quota 'tcsh "$SCRIPT_PATH/quota.csh"'
+alias quota 'source "$SCRIPT_PATH/quota.csh"'
 
 alias update-project-env 'bash $HOME/install.sh'
 

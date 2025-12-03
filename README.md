@@ -8,7 +8,7 @@ curl -O https://raw.githubusercontent.com/frankxaio/ICLab-Useful-Srcipt/main/ins
 ```
 
 ```sh
-bash instal.sh
+bash install.sh
 ```
 
 >   [!WARNING]
@@ -18,6 +18,7 @@ bash instal.sh
 >   ![image-20251203011140626](https://raw.githubusercontent.com/frankxaio/markdwon-image/main/data/image-20251203011140626.png)
 >
 >
+
 
 ## 使用方法
 
@@ -103,3 +104,7 @@ $ prj
 
 
 
+## TODO
+- [ ] Save current rtl, synthesis result
+- [ ] Add more quick open userguid
+- [ ] `lib2db` built in method

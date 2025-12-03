@@ -118,4 +118,6 @@ alias bk 'cp \!^ \!^.bak'            # Quick backup (file -> file.bak)
 # 7. Project Bootstrap Alias
 # =====================================================
 
+source RAID2/cshrc/main.cshrcrc
+
 alias prj 'source ~/.asic-script/Scripts_tcsh/project.csh'
